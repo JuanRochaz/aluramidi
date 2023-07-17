@@ -1,7 +1,13 @@
-function tocaSom (idElementoAudio) {
+function tocaSom (seletorAudio) {
+    const elemento = document.querySelector(seletorAudio);
 
-    document.querySelector(idElementoAudio).play();
-
+    //pode deixar apenas if(elemento &&.... pois o java é inteligente para verificar se o elemento é diferente de true)
+    if (elemento != null && elemento.localName === 'audio') {
+        elemento.play(); 
+    }
+    else{
+        console.log('Elemento não encontrado ou Seletor inválido');
+    }
 }
 
 const listaDeTeclas = document.querySelectorAll('.tecla');
